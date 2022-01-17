@@ -8,17 +8,7 @@ include_directories(src/)
 
 
 add_library(spidev-lib src/spidev_lib.c)
-add_executable(
-     spi-testc sample/spidev-testc.c
-)
-target_link_libraries( spi-testc spidev-lib)
-
 add_library(spidev-lib++ src/spidev_lib++.cc)
-add_executable(spi-testcpp sample/spidev-testcpp.cc)
-target_link_libraries( spi-testcpp spidev-lib++ )
-
-add_dependencies(spi-testcpp spidev-lib++)
-add_dependencies(spi-testc spidev-lib)
 
 INSTALL(TARGETS  spidev-lib  spidev-lib++
   RUNTIME DESTINATION bin
